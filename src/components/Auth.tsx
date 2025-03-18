@@ -66,7 +66,7 @@ export function Auth() {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${import.meta.env.VITE_REDIRECT_URL}/dashboard`, // Ensure this matches Supabase settings
+          redirectTo: `${import.meta.env.VITE_REDIRECT_URL}`, // Ensure this matches Supabase settings
         },
       });
       if (error) {
@@ -86,7 +86,7 @@ export function Auth() {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
       options: {
-        redirectTo: `${import.meta.env.VITE_REDIRECT_URL}/dashboard`, // Dynamically set redirect URL
+        redirectTo: `${import.meta.env.VITE_REDIRECT_URL}`, // Dynamically set redirect URL
       },
     });
     if (error) {
