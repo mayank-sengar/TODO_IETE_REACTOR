@@ -43,7 +43,7 @@ export function AddTodo() {
           Add New Task
         </button>
       ) : (
-        <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow">
+        <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow ">
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">
@@ -54,7 +54,8 @@ export function AddTodo() {
                 required
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                className="px-1 mt-1 block w-full rounded-md border-gray-300 shadow-sm
+                 focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
               />
             </div>
 
@@ -66,7 +67,7 @@ export function AddTodo() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 rows={3}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                className="px-1 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
               />
             </div>
 
