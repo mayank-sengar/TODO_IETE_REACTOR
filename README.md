@@ -50,10 +50,46 @@ VITE_GOOGLE_CLIENT_SECRET=your_google_client_secret_here
 
 ## Deployment
 
-The app is hosted on **Netlify**. To deploy:
 
-1. Push your changes to GitHub.
-2. Connect the repository to Netlify.
-3. Configure environment variables in Netlify settings.
-4. Deploy the site!
+### Deploying to Netlify
+
+1. **Fork or Clone the Repository**:  
+   Ensure you have the repository cloned locally or forked to your GitHub account.
+
+2. **Connect GitHub Repository to Netlify**:
+
+   - Log in to [Netlify](https://www.netlify.com/).
+   - Click on "New site from Git".
+   - Select your GitHub repository.
+   - Choose the branch you want to deploy (e.g., `main`).
+
+3. **Set Environment Variables**:  
+   In the Netlify dashboard:
+
+   - Go to "Site Settings" > "Environment Variables".
+   - Add the following variables:
+     ```
+     VITE_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+     VITE_SUPABASE_URL=your_supabase_url_here
+     VITE_REDIRECT_URL=https://your-netlify-site-url/dashboard
+     VITE_GOOGLE_CLIENT_ID=your_google_client_id_here
+     VITE_GOOGLE_CLIENT_SECRET=your_google_client_secret_here
+     ```
+
+4. **Build Settings**:
+
+   - Set the build command to `npm run build`.
+   - Set the publish directory to `dist`.
+
+5. **Deploy**:
+
+   - Click "Deploy Site" to start the deployment process.
+
+6. **Verify Deployment**:
+   - Once deployed, visit your Netlify site URL to verify the app is working as expected.
+
+### Notes
+
+- Ensure the `VITE_REDIRECT_URL` matches the redirect URL configured in your Supabase project.
+- For local development, use `http://localhost:5173` as the `VITE_REDIRECT_URL`.
 
