@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { LogIn } from 'lucide-react';
+import { FcGoogle } from 'react-icons/fc';
+import { FaGithub } from 'react-icons/fa'; // Import GitHub icon
 
 export function Auth() {
   const [loading, setLoading] = useState(false);
@@ -54,6 +56,34 @@ export function Auth() {
       setError(authError.message);
     } else {
       alert('Check your email for the confirmation link!');
+    }
+    setLoading(false);
+  };
+
+  const handleGoogleSignIn = async () => {
+    setLoading(true);
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/dashboard`, // Adjust redirect URL as needed
+      },
+    });
+    if (error) {
+      setError(error.message);
+    }
+    setLoading(false);
+  };
+
+  const handleGitHubSignIn = async () => {
+    setLoading(true);
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'github',
+      options: {
+        redirectTo: `${window.location.origin}/dashboard`, // Adjust redirect URL as needed
+      },
+    });
+    if (error) {
+      setError(error.message);
     }
     setLoading(false);
   };
@@ -116,6 +146,24 @@ export function Auth() {
             </button>
           </div>
         </form>
+        <div className="mt-6 space-y-3">
+          <button
+            onClick={handleGoogleSignIn}
+            disabled={loading}
+            className="bg-red-600 group relative w-full flex justify-center py-2 px-4 border border-gray-300 text-sm font-medium rounded-md text-white hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+          >
+            <FcGoogle className="h-5 w-5 mr-2" />
+            Sign in with Google
+          </button>
+          <button
+            onClick={handleGitHubSignIn}
+            disabled={loading}
+            className="bg-gray-800 group relative w-full flex justify-center py-2 px-4 border border-gray-300 text-sm font-medium rounded-md text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+          >
+            <FaGithub className="h-5 w-5 mr-2" />
+            Sign in with GitHub
+          </button>
+        </div>
       </div>
     </div>
   );

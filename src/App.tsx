@@ -36,7 +36,7 @@ function App() {
           <div className="flex items-center">
             <CheckSquare className="h-8 w-8 text-blue-600 dark:text-blue-400" />
             <h1 className="ml-2 text-2xl font-bold text-gray-900 dark:text-gray-100">
-              Advanced Todo List
+               Todo List
             </h1>
           </div>
           <div className="flex items-center space-x-4">
