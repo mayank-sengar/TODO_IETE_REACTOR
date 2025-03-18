@@ -62,16 +62,23 @@ export function Auth() {
 
   const handleGoogleSignIn = async () => {
     setLoading(true);
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google',
-      options: {
-        redirectTo: `${import.meta.env.VITE_REDIRECT_URL}/dashboard`, // Dynamically set redirect URL
-      },
-    });
-    if (error) {
-      setError(error.message);
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${import.meta.env.VITE_REDIRECT_URL}/dashboard`, // Ensure this matches Supabase settings
+        },
+      });
+      if (error) {
+        setError(error.message);
+        console.error('Google Sign-In Error:', error.message); // Debugging
+      }
+    } catch (err) {
+      console.error('Unexpected Error:', err); // Fallback error logging
+      setError('An unexpected error occurred. Please try again.');
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const handleGitHubSignIn = async () => {
