@@ -4,12 +4,16 @@ A modern, feature-rich To-Do List web application built with **React.js**, **Typ
 
 ## Features
 
-- **User Authentication**: Sign up and login with email/password
-- **OAuth Support**: Login using Google/GitHub
-- **Task Management**: Add, remove, and edit tasks
-- **Priority Setting**: Assign priority levels to tasks
-- **Task Organization**: Group tasks into categories
-- **Dark Mode**: Toggle between light and dark themes
+- **User Authentication**: Sign up and login with email/password using Supabase.  
+- **OAuth Support**: Login using Google and GitHub for seamless authentication.  
+- **Task Management**: Add, remove, edit, and mark tasks as completed or active.  
+- **Priority Setting**: Assign priority levels (low, medium, high) to tasks for better organization.  
+- **Task Organization**: Group tasks into customizable categories (e.g., personal, work, shopping).  
+- **Dark Mode**: Toggle between light and dark themes for a personalized user experience.  
+- **Offline Support**: Access tasks offline with IndexedDB integration.  
+- **Real-Time Updates**: Automatically sync tasks across devices using Supabase's real-time capabilities.  
+
+This expanded list highlights the app's advanced features, such as offline support and real-time updates, making it more appealing to users.
 
 ## Tech Stack
 
