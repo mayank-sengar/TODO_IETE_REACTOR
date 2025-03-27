@@ -13,7 +13,6 @@ A modern, feature-rich To-Do List web application built with **React.js**, **Typ
 - **Offline Support**: Access tasks offline with IndexedDB integration.  
 - **Real-Time Updates**: Automatically sync tasks across devices using Supabase's real-time capabilities.  
 
-This expanded list highlights the app's advanced features, such as offline support and real-time updates, making it more appealing to users.
 
 ## Tech Stack
 
